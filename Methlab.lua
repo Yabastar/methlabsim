@@ -101,11 +101,7 @@ local function sellMeth()
   print("Sold " .. meth .. " lb of meth. ($" .. (methprice * meth) .. ")")
   money = money + (methprice * meth)
   type = math.random(1,2)
-  if type == 1 then
-    methprice = methprice - math.random(1,10)
-  else
-    methprice = methprice + math.random(1,20)
-  end
+  methprice = math.random(200,300)
   meth = 0
 end
 
