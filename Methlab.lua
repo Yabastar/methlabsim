@@ -102,7 +102,7 @@ local function sellMeth()
   money = money + (methprice * meth)
   type = math.random(1,2)
   if type == 1 then
-    methprice = methprice - math.random(1,20)
+    methprice = methprice - math.random(1,10)
   else
     methprice = methprice + math.random(1,20)
   end
