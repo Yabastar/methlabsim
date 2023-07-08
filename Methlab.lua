@@ -1,7 +1,7 @@
 local configFileName = ".config.txt" -- Name of the config file
 
 equipment = 1
-methprice = math.random(200, 300)
+methprice = 250
 equipmentcost = 700
 meth = 0
 money = 0
@@ -100,7 +100,12 @@ local function sellMeth()
   clr()
   print("Sold " .. meth .. " lb of meth. ($" .. (methprice * meth) .. ")")
   money = money + (methprice * meth)
-  methprice = math.random(200, 300)
+  type = math.random(1,2)
+  if type == 1 then
+    methprice = methprice - math.random(1,20)
+  else
+    methprice = methprice + math.random(1,20)
+  end
   meth = 0
 end
 
