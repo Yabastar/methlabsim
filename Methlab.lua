@@ -5,6 +5,7 @@ methprice = 250
 equipmentcost = 700
 meth = 0
 money = 0
+evercooked = 0
 -- Function to clear the terminal
 local function clr()
   term.clear()
@@ -40,6 +41,7 @@ local function loadConfig()
       equipmentcost = config.equipmentcost or 700
       meth = config.meth or 0
       money = config.money or 0
+      evercooked = config.evercooked or 0
       -- Add other variables here
     end
   end
@@ -56,6 +58,7 @@ local function saveConfig()
       equipmentcost = equipmentcost,
       meth = meth,
       money = money
+      evercooked = evercooked
       -- Add other variables here
     }
 
