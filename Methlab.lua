@@ -57,7 +57,7 @@ local function saveConfig()
       methprice = methprice,
       equipmentcost = equipmentcost,
       meth = meth,
-      money = money
+      money = money,
       evercooked = evercooked
       -- Add other variables here
     }
