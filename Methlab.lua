@@ -108,14 +108,19 @@ end
 
 local function sellMeth()
          clr()
-         caught = math.random(1,2)
-         print(caught)
-         print("Sold " .. meth .. " lb of meth. ($" .. (methprice * meth) .. ")")
-         money = money + (methprice * meth)
-         evermoney = evermoney + (methprice * meth)
-         type = math.random(1,2)
-         methprice = math.random(200,300)
-         meth = 0
+         caught = math.random(1,25)
+         if caught ~= 1 then
+                  print("Sold " .. meth .. " lb of meth. ($" .. (methprice * meth) .. ")")
+                  money = money + (methprice * meth)
+                  evermoney = evermoney + (methprice * meth)
+                  type = math.random(1,2)
+                  methprice = math.random(200,300)
+                  meth = 0
+         else
+                  print("You were busted! They stole all of your meth and took $" .. (money * 0.1) .. "!")
+                  meth = 0
+                  money = (money - (money * 0.1))
+         end
 end
 
 local function upgradeEquipment()
