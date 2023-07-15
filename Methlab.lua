@@ -108,7 +108,7 @@ end
 
 local function sellMeth()
          clr()
-         caught = math.random(1,25)
+         caught = math.random(1,70)
          if caught ~= 1 then
                   print("Sold " .. meth .. " lb of meth. ($" .. (methprice * meth) .. ")")
                   money = money + (methprice * meth)
