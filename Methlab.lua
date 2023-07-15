@@ -25,7 +25,7 @@ while true do
          end
 end
 clr()
-print("Meth Lab Simulator V101")
+print("Meth Lab Simulator V102")
 print("by SEROST")
 -- Function to load variables from the config file
 local function loadConfig()
@@ -107,9 +107,9 @@ local function cookMeth()
 end
 
 local function sellMeth()
+         clr()
          caught = math.random(1,2)
          print(caught)
-         clr()
          print("Sold " .. meth .. " lb of meth. ($" .. (methprice * meth) .. ")")
          money = money + (methprice * meth)
          evermoney = evermoney + (methprice * meth)
