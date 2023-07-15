@@ -25,7 +25,7 @@ while true do
          end
 end
 clr()
-print("Meth Lab Simulator V100")
+print("Meth Lab Simulator V101")
 print("by SEROST")
 -- Function to load variables from the config file
 local function loadConfig()
@@ -68,8 +68,8 @@ local function saveConfig()
                   }
 
                   -- Serialize the config table to a basic serialization format
-                  local configContent = string.format("{ equipment = %d, methprice = %d, equipmentcost = %d, meth = %d, money = %d }",
-                  config.equipment or 0, config.methprice or 0, config.equipmentcost or 0, config.meth or 0, config.money or 0)
+                  local configContent = string.format("{ equipment = %d, methprice = %d, equipmentcost = %d, meth = %d, money = %d, evercooked = %d, evermoney = %d }",
+                  config.equipment or 0, config.methprice or 0, config.equipmentcost or 0, config.meth or 0, config.money or 0, config.evercooked or 0, config.evermoney or 0)
 
                   -- Write the config content to the config file
                   configFile:write(configContent)
