@@ -25,6 +25,8 @@ while true do
          end
 end
 clr()
+print("Meth Lab Simulator V100")
+print("by SEROST")
 -- Function to load variables from the config file
 local function loadConfig()
          local configFile = io.open(configFileName, "r") -- Open the config file in read mode
