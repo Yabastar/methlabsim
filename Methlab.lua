@@ -88,6 +88,7 @@ local function handleMenu(options)
                            options[choice].action()
                            break -- Exit the loop after a valid option is chosen
                   else
+                           clr()
                            print("Invalid option. Please try again.")
                   end
          end
@@ -104,6 +105,8 @@ local function cookMeth()
 end
 
 local function sellMeth()
+         caught = math.random(1,2)
+         print(caught)
          clr()
          print("Sold " .. meth .. " lb of meth. ($" .. (methprice * meth) .. ")")
          money = money + (methprice * meth)
