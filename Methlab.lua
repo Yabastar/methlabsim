@@ -7,7 +7,6 @@ meth = 0
 money = 0
 evercooked = 0
 evermoney = 0
-evermeth = 0
 -- Function to clear the terminal
 local function clr()
          term.clear()
@@ -45,7 +44,6 @@ local function loadConfig()
                            money = config.money or 0
                            evercooked = config.evercooked or 0
                            evermoney = config.evermoney or 0
-                           evermeth = config.evermeth or 0
                            -- Add other variables here
                   end
          end
@@ -63,8 +61,7 @@ local function saveConfig()
                            meth = meth,
                            money = money,
                            evercooked = evercooked,
-                           evermoney = evermoney,
-                           evermeth = evermeth
+                           evermoney = evermoney
                            -- Add other variables here
                   }
 
@@ -103,12 +100,14 @@ local function cookMeth()
          sleep(0.5)
          print("You have cooked " .. (equipment / 2) .. " lb of meth.")
          meth = meth + (equipment / 2)
+         evercooked = evercooked + (equipment / 2)
 end
 
 local function sellMeth()
          clr()
          print("Sold " .. meth .. " lb of meth. ($" .. (methprice * meth) .. ")")
          money = money + (methprice * meth)
+         evermoney = evermoney + (methprice * meth)
          type = math.random(1,2)
          methprice = math.random(200,300)
          meth = 0
@@ -136,11 +135,21 @@ local function exitProgram()
          error("Program terminated by user")
 end
 
+local function stats()
+         clr()
+         print("Current money: $" .. money)
+         print("Money earned: $" .. evermoney)
+         print("Equipment level " .. equipment)
+         print("Current meth: " .. meth .. "lb")
+         print("Meth cooked: " .. evercooked .. "lb")
+end
+
 local options = {
          { name = "Cook meth", action = cookMeth },
          { name = "Sell meth", action = sellMeth },
          { name = "Upgrade equipment", action = upgradeEquipment },
          { name = "Check balance", action = checkBalance },
+         { name = "Stats", action = stats },
          { name = "Exit", action = exitProgram }
 }
 
