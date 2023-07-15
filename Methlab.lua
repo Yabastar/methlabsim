@@ -25,7 +25,7 @@ while true do
          end
 end
 clr()
-print("Meth Lab Simulator V103")
+print("Meth Lab Simulator V104")
 print("by SEROST")
 -- Function to load variables from the config file
 local function loadConfig()
